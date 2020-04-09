@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+
+
+<link rel = "stylesheet" type = "text/css" href = "style.css" />
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+<h1>Welcome to my Quiz Website</h1>
+<p>Please enter your name in the form and select which quiz you would like to take!</p>
+
+
+<form action="/action_page.php">
+  <label for="fullname">Full Name:</label><br>
+  <input type="text" id="fullname" name="fullname" value="ex: Kamil Peza"><br><br>
+  
+ <!--
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  -->
+  
+    <label for="QUIZ">Choose a quiz you want to take:</label>
+	<select id="QUIZ" name="QUIZ">
+	
+    <option value="QUIZ1">QUIZ1</option>
+    <option value="QUIZ2">QUIZ2</option>
+	
+	</select>
+
+  <input type="submit" value="Submit">
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+
+</body>
+</html>
