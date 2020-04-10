@@ -1,42 +1,84 @@
 <!DOCTYPE html>
 <html>
-
 <head> 
-
-
-<link rel = "stylesheet" type = "text/css" href = "style.css" />
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>QUIZ WORLD</title>
+	<!-- HTML and CSS references-->
+	<link rel = "stylesheet" type = "text/css" href = "style.css" />
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<!-- Javascript References -->
+	<script src="my_javascript.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+	
 
 </head>
+<!------------------------------------------------------------------------------------------------------------------------------------------------->
 <body>
-
-<h1>Welcome to my Quiz Website</h1>
-<p>Please enter your name in the form and select which quiz you would like to take!</p>
-
-
-<form action="/action_page.php">
-  <label for="fullname">Full Name:</label><br>
-  <input type="text" id="fullname" name="fullname" value="ex: Kamil Peza"><br><br>
-  
- <!--
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br><br>
-  -->
-  
-    <label for="QUIZ">Choose a quiz you want to take:</label>
-	<select id="QUIZ" name="QUIZ">
 	
-    <option value="QUIZ1">QUIZ1</option>
-    <option value="QUIZ2">QUIZ2</option>
+	<div class="container">
+		<div class="jumbotron">
+			<h1 id="title">Welcome to Quiz World</h1>		
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="container-fluid">
+			<p>Please enter your Name and select which Quiz you want to take:</p><br>
+			<form id="startInput" name="myForm" action="/action_page.php" onsubmit="return submitStart()" method="post">
+				<label for="fullname">Full Name Input:&emsp;</label> 
+				<input type="text" id="fullname" name="fullname" placeholder="name"><br><br>
+		  
+				<label for="QUIZ">Choose a quiz you want to take:&emsp;</label>
+				<select id="QUIZ" name="QUIZ">		
+					<option value="QUIZ1">QUIZ1</option>
+					<option value="QUIZ2">QUIZ2</option>			
+				</select><br>
+
+				<input type="submit" value="Start Quiz">
+			</form> 
+		</div>
+	</div>
+
+
+<!-- Divs where the quiz content will be loaded asynchronously using AJAX ------------------------------------------------------------------------------>
+	<div class="row">
+		<div id="app_widget" class="container-fluid"></div> <!-- This div will be populated with what we getting from the backend-->
+		
+			
+			<script id="post_question_view" type="text/x-handlebars-template">
+			<h2>  Questions:</h2>
+			
+			<div id="quizQuestion"> 
+			
+				<h1>  .... {{this.question}} </h1>
+				
+			</script>
+			
+			<p>test paragraph {{this.questionId }}</p>
+			</div>  
+	</div>
+		
 	
-	</select>
-
-  <input type="submit" value="Submit">
-</form> 
-
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
-
-
+	<!--
+	<div class="col-6 mx-auto">
+		
+		<div id="feedback"> </div>  <!-- This div will show feedback from the users answer whether they are right or wrong-->
+		
+	</div>
+	
+	-->
+	
+	
+	
+	
+	
 </body>
 </html>
+
+		 <!--
+		  <label for="lname">Last name:</label><br>
+		  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+		  -->
+

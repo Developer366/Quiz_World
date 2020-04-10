@@ -1,3 +1,7 @@
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
 	background-color: lightblue !important;
 }
@@ -9,5 +13,35 @@ h1 {
 
 p {
 	font-family: verdana;
-	color: green;
+	/*color: green;*/
+	text-align:center;
+	font-size:30px;
+}
+label {
+	font-size:30px;
+	
+}
+form {
+	border:1px solid black;
+	border-width: thin;
+	padding: 50px;
+}
+
+
+#title {
+	font-size:70px;
+	color:Aqua;
+}
+#app_widget {
+	text-align: center;
+	background-color: aqua;
+}
+
+.jumbotron {
+	background-color: DarkOrange !important;
+	
+	
+}
+.container-fluid {
+	text-align:center;
 }
