@@ -14,7 +14,7 @@
 	
 
 </head>
-<!------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------->
 <body>
 	
 	<div class="container">
@@ -22,63 +22,99 @@
 			<h1 id="title">Welcome to Quiz World</h1>		
 		</div>
 	</div>
-
+	
+<!-- Submit Form DIV---------------------------------------------------------------------------------------------------------------------------->
 	<div class="row">
 		<div class="container-fluid">
-			<p>Please enter your Name and select which Quiz you want to take:</p><br>
-			<form id="startInput" name="myForm" action="/action_page.php" onsubmit="return submitStart()" method="post">
+			<p id="Header">Please enter your Name and select which Quiz you want to take:</p><br>
+			
+			<div id="startInput">
+			
 				<label for="fullname">Full Name Input:&emsp;</label> 
 				<input type="text" id="fullname" name="fullname" placeholder="name"><br><br>
 		  
-				<label for="QUIZ">Choose a quiz you want to take:&emsp;</label>
+				<label for="QUIZsss">Choose a quiz you want to take:&emsp;</label>
 				<select id="QUIZ" name="QUIZ">		
-					<option value="QUIZ1">QUIZ1</option>
-					<option value="QUIZ2">QUIZ2</option>			
+					<option value="Java Quiz">Java Quiz</option>
+					<option value="HTML/CSS Quiz">HTML/CSS Quiz</option>			
 				</select><br>
-
-				<input type="submit" value="Start Quiz">
-			</form> 
+				
+				<button onclick="submitStart()">Start Quiz</button>
+			</div> 
 		</div>
 	</div>
+<!----------------------------------------------------------------------------------------------------------------------------------------------->
 
-
-<!-- Divs where the quiz content will be loaded asynchronously using AJAX ------------------------------------------------------------------------------>
+<!-- Divs where the quiz content will be loaded asynchronously usin------------------------------------------------------------------------------>
 	<div class="row">
-		<div id="app_widget" class="container-fluid"></div> <!-- This div will be populated with what we getting from the backend-->
+	
+		<!-- This div will be populated with what we getting from the backend-->
+		<div id="app_widget" class="container-fluid"></div> 
 		
-			
+			<!--Handlebar code starts here template for a multiple choice question-->
 			<script id="post_question_view" type="text/x-handlebars-template">
-			<h2>  Questions:</h2>
-			
-			<div id="quizQuestion"> 
-			
-				<h1>  .... {{this.question}} </h1>
+				
+				<h1>[Question {{this.0.questionId}}]:  {{this.0.question}}</h1>
+				
+				
+				
+							
+				<div id="answerChoices"> 
+				
+				<ul>
+					{{#each JavaQuizQuestions}}
+						<li>{{this.question}}</li>
+						<li>{{this.message}}</li>
+					{{/each}}
+					</ul>
+				
+				
+				
+					<form id="submitAnswer">
+						
+						<input type="radio" name="choice">
+						<label for="choice1">a) {{ this.0.options.[0] }}</label><br>
+						
+						<input type="radio" name="choice">
+						<label for="choice2">b) {{ this.0.options.[1] }}</label><br>
+						
+						<input type="radio" name="choice">
+						<label for="choice3">c) {{ this.0.options.[2] }}</label><br>
+						
+						<input type="radio" name="choice">					
+						<label for="choice4">d) {{ this.0.options.[3] }}</label><br>					
+						
+						<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
+					</form>	
+					
+					
+						
+				</div>	
+				
 				
 			</script>
 			
-			<p>test paragraph {{this.questionId }}</p>
-			</div>  
+				
 	</div>
 		
 	
 	<!--
 	<div class="col-6 mx-auto">
 		
-		<div id="feedback"> </div>  <!-- This div will show feedback from the users answer whether they are right or wrong-->
+		<div id="feedback"> </div>   This div will show feedback from the users answer whether they are right or wrong
 		
 	</div>
-	
 	-->
 	
-	
-	
-	
-	
+
 </body>
 </html>
 
-		 <!--
-		  <label for="lname">Last name:</label><br>
-		  <input type="text" id="lname" name="lname" value="Doe"><br><br>
-		  -->
+ <!--
+	<label for="lname">Last name:</label><br>
+	<input type="text" id="lname" name="lname" value="Doe"><br><br>
+		  
+		  {{this.JavaQuizQuestions.question}}
+
+		 -->
 
