@@ -27,19 +27,33 @@ label {
 	padding: 50px;
 }
 
-
 #title {
 	font-size:70px;
 	color:Aqua;
 }
 #app_widget {
 	text-align: center;
-	background-color: aqua;
+	background-color: aqua;	
+	border:1px solid black;
+}
+#feedBackView {
+	background-color: LightPink;
+	font-size: 30px;
+	border:1px solid black;
+	margin-bottom: 30px;
+	display: none;
+}
+#wrongAnswer{
+	/*visibility: hidden;*/
+	display: none;
+}
+#correctAnswer{
+	/*visibility: hidden;*/
+	display:none;
 }
 
 .jumbotron {
 	background-color: DarkOrange !important;
-	
 	
 }
 .container-fluid {

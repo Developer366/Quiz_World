@@ -34,7 +34,7 @@
 				<input type="text" id="fullname" name="fullname" placeholder="name"><br><br>
 		  
 				<label for="QUIZsss">Choose a quiz you want to take:&emsp;</label>
-				<select id="QUIZ" name="QUIZ">		
+				<select id="QuizChoice" name="QUIZ">		
 					<option value="Java Quiz">Java Quiz</option>
 					<option value="HTML/CSS Quiz">HTML/CSS Quiz</option>			
 				</select><br>
@@ -46,56 +46,93 @@
 <!----------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!-- Divs where the quiz content will be loaded asynchronously usin------------------------------------------------------------------------------>
-	<div class="row">
 	
 		<!-- This div will be populated with what we getting from the backend-->
 		<div id="app_widget" class="container-fluid"></div> 
 		
-			<!--Handlebar code starts here template for a multiple choice question-->
+			<!--Handlebar code starts here template for a multiple choice question	<h1>[Question {{this.0.questionId}}]:  {{this.0.question}}</h1>	-->
 			<script id="multipleChoice" type="text/x-handlebars-template">
 				
-				<h1>[Question {{this.0.questionId}}]:  {{this.0.question}}</h1>						
-				<div id="answerChoices"> 				
-				<ul>
-					{{#each JavaQuizQuestions}}
-						<li>{{this.question}}</li>
-						<li>{{this.message}}</li>
-					{{/each}}
-					</ul>			
+				<h1>[Question {{questionId}}]:  {{question}}</h1>	
 				
-					<form id="QuestionOptions">
+					<div id="answerChoices"> 				
+									
+						<form id="QuestionOptions" onsubmit="return false">						
+							<input type="radio" name="choice" id="option1" value="{{ options.[0] }}" checked>   <label for="option1">a) {{ options.[0] }}</label><br>	
+							<input type="radio" name="choice" id="option2" value="{{ options.[1] }}">   		<label for="option2">b) {{ options.[1] }}</label><br>
+							<input type="radio" name="choice" id="option3" value="{{ options.[2] }}">   		<label for="option3">c) {{ options.[2] }}</label><br>				
+							<input type="radio" name="choice" id="option4" value="{{ options.[3] }}">   		<label for="option4">d) {{ options.[3] }}</label><br>											
+							<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
+						</form>						
+					</div><br><br>
+					
+				
+				<!-- If the question is wrong explain the correct answer and have a button to go to the next question-->
+					<div id="feedBackView">	
+					
+						<div id="wrongAnswer">
+							<p> The Answer is: <p id="answer">{{answer}}</p></p> 
+							<p> Explanation: {{explanation}}</p>
+							<button id="OK">Ok got it!!</button>
+						</div>
 						
-						<input type="radio" id="option1">   <label for="option1">a) {{ this.0.options.[0] }}</label><br>
-						
-						<input type="radio" id="option2">   <label for="option2">b) {{ this.0.options.[1] }}</label><br>
-						
-						<input type="radio" id="option3">   <label for="option3">c) {{ this.0.options.[2] }}</label><br>
-						
-						<input type="radio" id="option4">   <label for="option4">d) {{ this.0.options.[3] }}</label><br>					
-						
-						<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
-					</form>		
-				</div>				
-			</script>			
+						<!--If the question is correct, show an encouraging message that lasts for a second, then goes to the next question automatically-->
+						<div id="correctAnswer">
+							<p>You are Correct!</p>
+							<p>Encouraging Message: {{message}}</p>
+						</div>					
+					</div>
+				
+			</script>
+		
+
+		<!--
+		Feedback view that is going to have the explanation if wrong or a encouraging message if correct. then a ok button that increments to the next question
+		<div id="feedblackView" class="container-fluid"></div>
+		
+			<script id="feedbackView" type="text/x-handlebars-template">
+				<div>
+				
+				</div>
 			
-	
-	<!--
-	<div class="col-6 mx-auto">
-		
-		<div id="feedback"> </div>   This div will show feedback from the users answer whether they are right or wrong
-		
-	</div>
-	-->
-	
+				<button onclick="submitStart()">Ok Next Question</button>
+			</script>
+		-->
+			
+			
 
 </body>
 </html>
 
- <!--
+
+
+
+
+ <!-- Code that was cut and saved for references
 	<label for="lname">Last name:</label><br>
 	<input type="text" id="lname" name="lname" value="Doe"><br><br>
 		  
 		  {{this.JavaQuizQuestions.question}}
 
-		 -->
+
+					<ul>
+					{{#each JavaQuizQuestions}}
+						<li>{{this.question}}</li>
+						<li>{{this.message}}</li>
+					{{/each}}
+					</ul>	
+
+
+
+	
+	<div class="col-6 mx-auto">
+		
+		<div id="feedback"> </div>   This div will show feedback from the users answer whether they are right or wrong
+		
+	</div>
+	
+
+
+
+-->
 
