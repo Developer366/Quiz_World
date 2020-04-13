@@ -1,10 +1,8 @@
 //This is a file called my_javascript.js
+//Global Variables
 
-//var firstname = window.prompt( );
-//var lastname;
+var i = 0;
 
-//var name = 
-//var quizChoice = 
 function submitStart() {
 	//var name = document.forms["myForm"]["fullname"].value;
 	//var quizChoice = document.forms["myForm"]["QUIZ"].value;
@@ -19,24 +17,43 @@ function submitStart() {
 		//document.getElementById("startInput").submit();
 		document.getElementById("startInput").style.display = "none";
 		document.getElementById("Header").innerHTML = "NAME: " + name + "&nbsp;&nbsp;-------&nbsp;&nbsp;QUIZ SELECTED: " + quizChoice;
-		create_user_view(0)	
+		create_user_view(i)	
 		return false;
 	}
 	//return false;
 }
-
+//check answer if right good job next question. iF WRONG EXPLAIN AND THEN CLICK OK and move on.
 function checkAnswer() {
+	var option1 = document.getElementById("option1");
+	var option2 = document.getElementById("option2");
+	var option3 = document.getElementById("option3");
+	var option4 = document.getElementById("option4"); 
+
+	
+/*	
+	if(){
+		
+		
+	}
+	else{
+		
+	}
 	//var radios = document.forms["submitAnswer"]["choice"].textContent;
 	var radios = document.getElementsByName('choice');
+	
+	for(int i=0; model.options.length; i++){
+		if 
+	}
+	
+	
 	for(i = 0; i < radios.length; i++){
 		if(radios[i].checked){
 			alert("You slected" + radios[i].textContent);
 		}
 	}
 	
-	
+*/	
 }
-//var myInfo = "<p>Question: {{}}
 
 
 //main method loads when the page is loaded 
@@ -49,24 +66,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //gets data from fake api
-const create_user_view = async (user_idx) => {
+const create_user_view = async (index) => {
 	//const data = await fetch("https://my-json-server.typicode.com/Developer366/CUS1172_Spring2020_Kamil_Peza")
 	
-	const data = await fetch('https://my-json-server.typicode.com/Developer366/CUS1172_Spring2020_Kamil_Peza/JavaQuizQuestions')//
+	const data = await fetch('https://my-json-server.typicode.com/Developer366/CUS1172_Spring2020_Kamil_Peza/db')//
 	const model = await data.json()
+		//document.getElementById()
 	
-	
-	const html_element = render_widget(model,'#post_question_view')
+	const html_element = render_widget(model,'#multipleChoice')
 	document.querySelector("#app_widget").innerHTML = html_element;
-	console.log(model)
+	//console.log(model[index])
 }
+
 
 
 
 //render template 
 const render_widget = (model, view) => {
 	
-	template_source = document.querySelector(view).innerHTML //view is the script tags in html that contain your template 
+	template_source = document.querySelector(view).innerHTML; //view is the script tags in html that contain your template 
 	//console.log(tempalte_source);
 	// Handlebars compiles the above source into a template
 	var template = Handlebars.compile(template_source);

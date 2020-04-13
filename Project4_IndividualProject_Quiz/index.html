@@ -52,51 +52,32 @@
 		<div id="app_widget" class="container-fluid"></div> 
 		
 			<!--Handlebar code starts here template for a multiple choice question-->
-			<script id="post_question_view" type="text/x-handlebars-template">
+			<script id="multipleChoice" type="text/x-handlebars-template">
 				
-				<h1>[Question {{this.0.questionId}}]:  {{this.0.question}}</h1>
-				
-				
-				
-							
-				<div id="answerChoices"> 
-				
+				<h1>[Question {{this.0.questionId}}]:  {{this.0.question}}</h1>						
+				<div id="answerChoices"> 				
 				<ul>
 					{{#each JavaQuizQuestions}}
 						<li>{{this.question}}</li>
 						<li>{{this.message}}</li>
 					{{/each}}
-					</ul>
+					</ul>			
 				
-				
-				
-					<form id="submitAnswer">
+					<form id="QuestionOptions">
 						
-						<input type="radio" name="choice">
-						<label for="choice1">a) {{ this.0.options.[0] }}</label><br>
+						<input type="radio" id="option1">   <label for="option1">a) {{ this.0.options.[0] }}</label><br>
 						
-						<input type="radio" name="choice">
-						<label for="choice2">b) {{ this.0.options.[1] }}</label><br>
+						<input type="radio" id="option2">   <label for="option2">b) {{ this.0.options.[1] }}</label><br>
 						
-						<input type="radio" name="choice">
-						<label for="choice3">c) {{ this.0.options.[2] }}</label><br>
+						<input type="radio" id="option3">   <label for="option3">c) {{ this.0.options.[2] }}</label><br>
 						
-						<input type="radio" name="choice">					
-						<label for="choice4">d) {{ this.0.options.[3] }}</label><br>					
+						<input type="radio" id="option4">   <label for="option4">d) {{ this.0.options.[3] }}</label><br>					
 						
 						<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
-					</form>	
-					
-					
-						
-				</div>	
-				
-				
-			</script>
+					</form>		
+				</div>				
+			</script>			
 			
-				
-	</div>
-		
 	
 	<!--
 	<div class="col-6 mx-auto">
