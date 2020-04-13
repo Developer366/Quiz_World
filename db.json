@@ -1,12 +1,12 @@
 {
-	"Java_Quiz":[
+	"Java_Quiz": [
 		{
-		 "questionId": 1,
-		 "question": "What is the numerical range of a char data type in Java?",
-		 "options": [ "-128 to 127", "0 to 256", "0 to 32767", "0 to 65535" ],
-		 "answer": "0 to 65535",
-		 "explanation": " Char occupies 16-bit in memory, so it supports 2^16 i:e from 0 to 65535.",
-		 "message": "Nice Job!"
+		"questionId": 1,
+		"question": "What is the numerical range of a char data type in Java?",
+		"options": [ "-128 to 127", "0 to 256", "0 to 32767", "0 to 65535" ],
+		"answer": "0 to 65535",
+		"explanation": " Char occupies 16-bit in memory, so it supports 2^16 i:e from 0 to 65535.",
+		"message": "Nice Job!"
 		},
 		{
 		"questionId": 2,
@@ -17,15 +17,14 @@
 		"message":"Good Answer!"
 		}
 	],
-	
-	"HTML/CSS_QUIZ":[
+	"HTML/CSS_QUIZ": [
 		{
-		 "questionId": 1,
-		 "question": "What does HTML stand for?",
-		 "options": [ "Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language", "Hyper Text Model Layout" ],
-		 "answer": "Hyper Text Markup Language",
-		 "explanation": "HTML stands for Hyper Text Markup Language",
-		 "message": "Correct!"
+		"questionId": 1,
+		"question": "What does HTML stand for?",
+		"options": [ "Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language", "Hyper Text Model Layout" ],
+		"answer": "Hyper Text Markup Language",
+		"explanation": "HTML stands for Hyper Text Markup Language",
+		"message": "Correct!"
 		},
 		{
 		"questionId": 2,
