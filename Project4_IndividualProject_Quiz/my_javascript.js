@@ -55,13 +55,14 @@ function checkAnswer() {
 				console.log(answer)
 				if(list[i].value==answer){
 					console.log(list[i].value)
+					document.getElementById("SubmitAnswer").style.display = "none";
 					document.getElementById("feedBackView").style.display = "block";
 					document.getElementById("correctAnswer").style.display = "block";
 					score++;
 					document.getElementById("score").innerHTML = "Correct Answers: " + score;
 					NumAnswered++;
 					document.getElementById("numAnswered").innerHTML = "Questions attempted: " + NumAnswered;				
-					setTimeout(nextQuestion,3000);
+					setTimeout(nextQuestion,2000);
 						/*
 						if(quizChoice=="Java Quiz"){
 							create_user_view_Q1(i)
