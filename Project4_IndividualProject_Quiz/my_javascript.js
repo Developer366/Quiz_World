@@ -6,6 +6,10 @@ var score = 0;
 var i = 0;
 //var questionNum= 1;
 var quizSelection;
+var NumAnswered = 0;
+var NumCorrect = 0; 
+var j = 0;
+
 
 function submitStart() {
 	//var name = document.forms["myForm"]["fullname"].value;
@@ -17,10 +21,10 @@ function submitStart() {
 		return false;
 	}
 	else{
-		alert("Hello " + name + "\nQuiz selected: " + quizChoice);
+		alert("Hello:  " + name + "\nQuiz selected:  " + quizChoice);
 		//document.getElementById("startInput").submit();
 		document.getElementById("startInput").style.display = "none";
-		document.getElementById("Header").innerHTML = "NAME: " + name + "&nbsp;&nbsp;-------&nbsp;&nbsp;QUIZ SELECTED: " + quizChoice;
+		document.getElementById("Header").innerHTML = "[NAME]: " + name + "&nbsp;&nbsp;<br>&nbsp;[QUIZ SELECTED]: " + quizChoice;
 		//create_user_view(1)
 		if(quizChoice == "Java Quiz"){
 			quizSelection ="Java Quiz";
@@ -52,8 +56,12 @@ function checkAnswer() {
 				if(list[i].value==answer){
 					console.log(list[i].value)
 					document.getElementById("feedBackView").style.display = "block";
-					document.getElementById("correctAnswer").style.display = "block";	
-					setTimeout(nextQuestion,2000);
+					document.getElementById("correctAnswer").style.display = "block";
+					score++;
+					document.getElementById("score").innerHTML = "Correct Answers: " + score;
+					NumAnswered++;
+					document.getElementById("numAnswered").innerHTML = "Questions attempted: " + NumAnswered;				
+					setTimeout(nextQuestion,3000);
 						/*
 						if(quizChoice=="Java Quiz"){
 							create_user_view_Q1(i)
@@ -65,9 +73,14 @@ function checkAnswer() {
 					//console.log("asdsasd")
 				}
 				else {
+					document.getElementById("SubmitAnswer").style.display = "none";
 					document.getElementById("feedBackView").style.display = "block";
 					document.getElementById("wrongAnswer").style.display = "block";
 					document.getElementById("OK").addEventListener("click",nextQuestion);
+					NumAnswered++;
+					document.getElementById("numAnswered").innerHTML = "Questions attempted: " + NumAnswered;
+					document.getElementById("score").innerHTML = "Correct Answers: " + score;
+					
 					
 					//console.log("dfdsdf")
 					/*
@@ -188,6 +201,7 @@ const render_widget = (model, view) => {
 	return html_widget_element
 	
 }
+
 
 
 //document.getElementById("form_id").submit();// Form submission	

@@ -15,6 +15,30 @@
 			"answer": "UNICODE",
 			"explanation": "Unicode defines fully international character set that can represent all the characters found in all human languages. Its range is from 0 to 65536.",
 			"message":"Good Answer!"
+		},
+		{
+			"questionId": 3,
+			"question": "java.util.Collections is a:",
+			"options": ["Class", "Interface", "Object", "None of the above"],
+			"answer": "Class",
+			"explanation": " java.util.Collections is a: Class. Class is an extensible program-code-template for creating objects.",
+			"message":"Amazing!"
+		},
+		{
+			"questionId": 4,
+			"question": "Which statement is not true in java language?",
+			"options": ["A public member of a class can be accessed in all the packages", "A private member of a class cannot be accessed by the methods of the same class", "A private member of a class cannot be accessed from its derived class", "A protected member of a class can be accessed from its derived class"],
+			"answer": "A private member of a class cannot be accessed by the methods of the same class",
+			"explanation": " The class members declared as private can be accessed only by the functions inside the class. They are not allowed to be accessed directly by any object or function outside the class. Only the member functions or the friend function are allowed to access the private data members of a class.",
+			"message":"I am proud of you!"
+		},
+		{
+			"questionId": 5,
+			"question": "In object-oriented programming, composition relates to",
+			"options": ["The use of consistent coding conventions", "The organization of components interacting to achieve a coherent, common behavior", "The use of inheritance to achieve polymorphic behavior", "The organization of components interacting not to achieve a coherent common behavior"],
+			"answer": "The organization of components interacting to achieve a coherent, common behavior",
+			"explanation": "Make objects that can have similar behavior and can interact with each other",
+			"message":"Great Job! That one was tricky!"
 		}
   ],
   "HTML_CSS_QUIZ": [
@@ -33,6 +57,30 @@
 			"answer": "H1",
 			"explanation": "H1 is the tag for the largest heading, while H6 is the smallest heading.",
 			"message":"Good Answer!"
+		},
+		{
+			"questionId": 3,
+			"question": "Which of the following property is used to create a small-caps effect?",
+			"options": ["font-family", "font-style", "font-variant", "Cascade Style Systems"],
+			"answer": "font-weight",
+			"explanation": "The font-variant property is used to create a small-caps effect.",
+			"message":"Awesome!"
+		},
+		{
+			"questionId": 4,
+			"question": "CSS stands for?",
+			"options": ["Case Sensitive Style", "Computers Style Sheets", "Cascade Style Sheets", "font-weight"],
+			"answer": "Cascade Style Sheets",
+			"explanation": "CSS stands for Cascading Style Sheets.",
+			"message":"High-Five!"
+		},
+		{
+			"questionId": 5,
+			"question": "Which is the coreect CSS Syntax?",
+			"options": ["Body:color=black", "{body;color:black}", "{body:color=black(body}}", "Body{color: Black}"],
+			"answer": "Body{color: Black}",
+			"explanation": "Element is followed by curly brackets. Inside curly brackets you select what you want to style followed by : and how you want to style. End with semi-colon.",
+			"message":"Epic!"
 		}
 	]	
 }	

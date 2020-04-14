@@ -12,6 +12,12 @@
 	
 	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 	
+	
+	<!--<script src="dist/easytimer.min.js"></script> 
+
+	<script>var timerInstance = new easytimer.Timer();</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	-->
 
 </head>
 <!---------------------------------------------------------------------------------------------------------------------------------------------->
@@ -27,6 +33,9 @@
 	<div class="row">
 		<div class="container-fluid">
 			<p id="Header">Please enter your Name and select which Quiz you want to take:</p><br>
+			<p id="score"></p>
+			<p id="numAnswered"></p>
+			
 			
 			<div id="startInput">
 			
@@ -39,7 +48,7 @@
 					<option value="HTML/CSS Quiz">HTML/CSS Quiz</option>			
 				</select><br>
 				
-				<button onclick="submitStart()">Start Quiz</button>
+				<button id="BeginQuiz" onclick="submitStart()">Start Quiz</button>
 			</div> 
 		</div>
 	</div>
@@ -54,6 +63,9 @@
 			<script id="multipleChoice" type="text/x-handlebars-template">
 				
 				<h1>[Question {{questionId}}]:  {{question}}</h1>	
+				<div></div>
+				
+				
 				
 					<div id="answerChoices"> 				
 									
