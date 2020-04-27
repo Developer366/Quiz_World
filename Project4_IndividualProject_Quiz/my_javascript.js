@@ -161,18 +161,22 @@ document.addEventListener('DOMContentLoaded', () => {
 //create_user_view(Java_Quiz, 0)
 //Java Quiz
 console.log()
+
+
 const create_user_view_Q1 = async (index) => {
 	//const data = await fetch("https://my-json-server.typicode.com/Developer366/CUS1172_Spring2020_Kamil_Peza")
 	var i=1;
 	const data = await fetch('https://my-json-server.typicode.com/Developer366/CUS1172_Spring2020_Kamil_Peza/db')
 	const model = await data.json()//model stores the databse
-	const html_element = render_widget(model.Java_Quiz[index],'#multipleChoice')//renders the view with handlebars
+	
 //const html_element = render_widget(model.Java_Quiz[0],'#multipleChoice')//renders the view with handlebars
-
+	if (model.Java_Quiz[index].questiontype=="MC"){
+	const html_element = render_widget(model.Java_Quiz[index],'#multipleChoice')//renders the view with handlebars
+	}
 	document.querySelector("#app_widget").innerHTML = html_element; //selects where to render the template
-	//var a = 1;
-	//console.log(model.Java_Quiz[a])
+	
 }
+
 //HTML CSS QUIZ
 const create_user_view_Q2 = async (index) => {
 	//const data = await fetch("https://my-json-server.typicode.com/Developer366/CUS1172_Spring2020_Kamil_Peza")

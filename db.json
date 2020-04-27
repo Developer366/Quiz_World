@@ -2,6 +2,7 @@
   "Java_Quiz": [
 		{
 			"questionId": 1,
+			"questiontype": "MC",
 			"question": "What is the numerical range of a char data type in Java?",
 			"options": [ "-128 to 127", "0 to 256", "0 to 32767", "0 to 65535" ],
 			"answer": "0 to 65535",
@@ -10,6 +11,7 @@
 		},
 		{
 			"questionId": 2,
+			"questiontype": "MC",
 			"question": "Which of these coding types is used for data types of characters in Java?",
 			"options": ["ASCII", "ISO-LATIN-1", "UNICODE", "None of the above"],
 			"answer": "UNICODE",
@@ -18,6 +20,7 @@
 		},
 		{
 			"questionId": 3,
+			"questiontype": "MC",
 			"question": "java.util.Collections is a:",
 			"options": ["Class", "Interface", "Object", "None of the above"],
 			"answer": "Class",
@@ -26,6 +29,7 @@
 		},
 		{
 			"questionId": 4,
+			"questiontype": "MC",
 			"question": "Which statement is not true in java language?",
 			"options": ["A public member of a class can be accessed in all the packages", "A private member of a class cannot be accessed by the methods of the same class", "A private member of a class cannot be accessed from its derived class", "A protected member of a class can be accessed from its derived class"],
 			"answer": "A private member of a class cannot be accessed by the methods of the same class",
@@ -34,16 +38,40 @@
 		},
 		{
 			"questionId": 5,
+			"questiontype": "MC",
 			"question": "In object-oriented programming, composition relates to",
 			"options": ["The use of consistent coding conventions", "The organization of components interacting to achieve a coherent, common behavior", "The use of inheritance to achieve polymorphic behavior", "The organization of components interacting not to achieve a coherent common behavior"],
 			"answer": "The organization of components interacting to achieve a coherent, common behavior",
 			"explanation": "Make objects that can have similar behavior and can interact with each other",
 			"message":"Great Job! That one was tricky!"
+		},
+		{
+			"questionId": 6,
+			"questiontype": "IMC",
+			"question": "What will the output of the following code be?",
+			"questionImage": "https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2018/07/Java-Quiz-One-Q.2.jpg",
+			"options": ["[1,1,2,3]", "[1,2,2,3]", "[1,1,3,2]", "[1,2,3]"],
+			"answer": "[1,1,3,2]",
+			"explanation": "The add() method in Java LinkedHashSet is used to add a specific element into a LinkedHashSet. This method will add the element only if the specified element is not present in the LinkedHashSet else the function will return False if the element is already present in the LinkedHashSet.",
+			"message":"Nice Thinking!"
+		},
+		{
+			"questionId": 7,
+			"questiontype": "IMC",
+			"question": "What will the output of the following code be?",
+			"questionImage": "https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2018/07/Java-Quiz-One-Q.2.jpg",
+			"options": ["[1,1,2,3]", "[1,2,2,3]", "[1,1,3,2]", "[1,2,3]"],
+			"answer": "[1,1,3,2]",
+			"explanation": "The add() method in Java LinkedHashSet is used to add a specific element into a LinkedHashSet. This method will add the element only if the specified element is not present in the LinkedHashSet else the function will return False if the element is already present in the LinkedHashSet.",
+			"message":"Nice Thinking!"
 		}
+		
+		
   ],
   "HTML_CSS_QUIZ": [
 		{
 			"questionId": 1,
+			"questiontype": "MC",
 			"question": "What does HTML stand for?",
 			"options": [ "Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language", "Hyper Text Model Layout" ],
 			"answer": "Hyper Text Markup Language",
@@ -52,6 +80,7 @@
 		},
 		{
 			"questionId": 2,
+			"questiontype": "MC",
 			"question": "Choose the correct HTML tag for the largest heading.",
 			"options": ["H1", "Heading", "Head", "H6"],
 			"answer": "H1",
@@ -60,6 +89,7 @@
 		},
 		{
 			"questionId": 3,
+			"questiontype": "MC",
 			"question": "Which of the following property is used to create a small-caps effect?",
 			"options": ["font-family", "font-style", "font-variant", "Cascade Style Systems"],
 			"answer": "font-weight",
@@ -68,6 +98,7 @@
 		},
 		{
 			"questionId": 4,
+			"questiontype": "MC",
 			"question": "CSS stands for?",
 			"options": ["Case Sensitive Style", "Computers Style Sheets", "Cascade Style Sheets", "font-weight"],
 			"answer": "Cascade Style Sheets",
@@ -76,6 +107,7 @@
 		},
 		{
 			"questionId": 5,
+			"questiontype": "MC",
 			"question": "Which is the coreect CSS Syntax?",
 			"options": ["Body:color=black", "{body;color:black}", "{body:color=black(body}}", "Body{color: Black}"],
 			"answer": "Body{color: Black}",

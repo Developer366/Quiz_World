@@ -52,20 +52,18 @@
 			</div> 
 		</div>
 	</div>
-<!----------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------->
 
 <!-- Divs where the quiz content will be loaded asynchronously usin------------------------------------------------------------------------------>
 	
-		<!-- This div will be populated with what we getting from the backend-->
-		<div id="app_widget" class="container-fluid"></div> 
+<!-- This div will be populated with what we getting from the backend-->
+	<div id="app_widget" class="container-fluid"></div> 
 		
 			<!--Handlebar code starts here template for a multiple choice question	<h1>[Question {{this.0.questionId}}]:  {{this.0.question}}</h1>	-->
 			<script id="multipleChoice" type="text/x-handlebars-template">
 				
 				<h1>[Question {{questionId}}]:  {{question}}</h1>	
-				<div></div>
-				
-				
+				<div></div>			
 				
 					<div id="answerChoices"> 				
 									
@@ -77,9 +75,12 @@
 							<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
 						</form>						
 					</div><br><br>
+				<!--Template for IMC Multiple Choice with an image question-->
+					
+		
 					
 				
-				<!-- If the question is wrong explain the correct answer and have a button to go to the next question-->
+	<!-- If the question is wrong explain the correct answer and have a button to go to the next question-->
 					<div id="feedBackView">	
 					
 						<div id="wrongAnswer">
@@ -88,7 +89,7 @@
 							<button id="OK">Ok got it!!</button>
 						</div>
 						
-						<!--If the question is correct, show an encouraging message that lasts for a second, then goes to the next question automatically-->
+	<!--If the question is correct, show an encouraging message that lasts for a second, then goes to the next question automatically-->
 						<div id="correctAnswer">
 							<p>You are Correct!</p>
 							<p>Encouraging Message: {{message}}</p>
