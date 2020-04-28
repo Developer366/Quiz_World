@@ -7,8 +7,8 @@ var NumAnswered = 0;
 var NumCorrect = 0; 
 var j = 0;
 
+//----------------------------------------------------Starts the Quiz after Submitting Name and Quiz Choice--------------------------------------------------------
 function submitStart() {
-	
 	var name = document.getElementById("fullname").value;
 	var quizChoice = document.getElementById("QuizChoice").value;
 	if (name == "") {
@@ -36,14 +36,15 @@ function submitStart() {
 	}
 }
 
-//-----------------check answer if right good job next question. iF WRONG EXPLAIN AND THEN CLICK OK and move on-----------------------------------------------
+//-----------------------check answer if right good job next question. iF WRONG EXPLAIN AND THEN CLICK OK and move on--------------------------------------------
 function checkAnswer() {
 		
 	var i = 0;
 	var list = document.getElementsByName("choice");
 	var answer = document.getElementById("answer").innerHTML; 	
 	console.log(list)
-		for(var i = 0; i < list.length; i++){
+	
+			for(var i = 0; i < list.length; i++){
 			
 			if(list[i].checked == true){			
 				console.log(answer)
@@ -56,8 +57,7 @@ function checkAnswer() {
 					document.getElementById("score").innerHTML = "Correct Answers: " + score;
 					NumAnswered++;
 					document.getElementById("numAnswered").innerHTML = "Questions attempted: " + NumAnswered;				
-					setTimeout(nextQuestion,2000);
-						
+					setTimeout(nextQuestion,3000);	
 				}
 				else {
 					document.getElementById("SubmitAnswer").style.display = "none";
@@ -66,14 +66,37 @@ function checkAnswer() {
 					document.getElementById("OK").addEventListener("click",nextQuestion);
 					NumAnswered++;
 					document.getElementById("numAnswered").innerHTML = "Questions attempted: " + NumAnswered;
-					document.getElementById("score").innerHTML = "Correct Answers: " + score;
-					
-					
-					
+					document.getElementById("score").innerHTML = "Correct Answers: " + score;					
 				}			
-			}			
+			}
 		}
 	}
+	
+function checkAnswerFITB(){
+	var answer = document.getElementById("answer").innerHTML; 
+	var input = document.getElementById("FillIn").value;
+	
+	if(anser=input){
+		document.getElementById("SubmitAnswer").style.display = "none";
+		document.getElementById("feedBackView").style.display = "block";
+		document.getElementById("correctAnswer").style.display = "block";
+		score++;
+		document.getElementById("score").innerHTML = "Correct Answers: " + score;
+		NumAnswered++;
+		document.getElementById("numAnswered").innerHTML = "Questions attempted: " + NumAnswered;				
+		setTimeout(nextQuestion,3000);
+	}
+	else{
+		document.getElementById("SubmitAnswer").style.display = "none";
+		document.getElementById("feedBackView").style.display = "block";
+		document.getElementById("wrongAnswer").style.display = "block";
+		document.getElementById("OK").addEventListener("click",nextQuestion);
+		NumAnswered++;
+		document.getElementById("numAnswered").innerHTML = "Questions attempted: " + NumAnswered;
+		document.getElementById("score").innerHTML = "Correct Answers: " + score;
+	}
+	
+}
 	
 //---------------------------------------------------------------Next Question Rendered---------------------------------------------------------------
 function nextQuestion(){
@@ -135,12 +158,20 @@ const create_user_view_Q1 = async (index) => {
 		document.querySelector("#app_widget").innerHTML = html_element;		
 		document.querySelector("#app_widget_FeedBackView").innerHTML = html_element_feedback;			
 	}
-	
-		
+//Fill in the Blank FITB Question
+	else if(model.Java_Quiz[index].questiontype=="FITB"){
+		//Render The Question View and Feedback
+		const html_element = render_widget(model.Java_Quiz[index],'#FITB')//renders the view with handlebars
+		const html_element_feedback = render_widget(model.Java_Quiz[index],'#feedbackView')	
+		//Render the Views
+		document.querySelector("#app_widget").innerHTML = html_element;		
+		document.querySelector("#app_widget_FeedBackView").innerHTML = html_element_feedback;
+	}	
 	
 }
 //Java Question References:
 //https://www.placementquestion.com/category/java_question/true_false_choice/
+//http://bssve.in/QuestionBank/JAVA.asp
 
 //--------------------------------------------------------HTML CSS QUIZ-------------------------------------------------------------------------------------
 const create_user_view_Q2 = async (index) => {

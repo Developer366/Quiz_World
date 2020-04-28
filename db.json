@@ -91,7 +91,41 @@
 			"answer": "False",
 			"explanation": "Constructor overloading is possible in Java. The Java compiler differentiates the constructors based on the number and the type of the arguments.",
 			"message":"Nice Job!"
+		},
+		{
+			"questionId": 11,
+			"questiontype": "TF",
+			"question": "Java Technology is both a programming language and a platform.",
+			"options": ["True", "False"],
+			"answer": "True",
+			"explanation": "A platform is the hardware or software environment in which a program runs. We've already mentioned some of the most popular platforms like Windows 2000, Linux, Solaris, and MacOS. Most platforms can be described as a combination of the operating system and hardware. The Java platform differs from most other platforms in that it's a software-only platform that runs on top of other hardware-based platforms.",
+			"message":"You are Smart!"
+		},
+		{
+			"questionId": 12,
+			"questiontype": "FITB",
+			"question": "The ________ statement is used to include another Java package in a Java source file.",
+			"answer": "Import",
+			"explanation": "In Java, the import statement is used to bring certain classes or the entire packages, into visibility. As soon as imported, a class can be referred to directly by using only its name. The import statement is a convenience to the programmer and is not technically needed to write complete Java program.",
+			"message":"Great!"
+		},
+		{
+			"questionId": 13,
+			"questiontype": "FITB",
+			"question": "__________ is the process by which objects of one class acquire the properties of another class.",
+			"answer": "Inheritence",
+			"explanation": "Inheritance in Java is a mechanism in which one object acquires all the properties and behaviors of a parent object. ... The idea behind inheritance in Java is that you can create new classes that are built upon existing classes. When you inherit from an existing class, you can reuse methods and fields of the parent class.",
+			"message":"Smart one are ya!"
+		},
+		{
+			"questionId": 14,
+			"questiontype": "FITB",
+			"question": "An _________  is an object that is generated when a run time error occurs.",
+			"answer": "Exception",
+			"explanation": "An exception (or exceptional event) is a problem that arises during the execution of a program. When an Exception occurs the normal flow of the program is disrupted and the program/Application terminates abnormally, which is not recommended, therefore, these exceptions are to be handled.",
+			"message":"Well done mate!"
 		}
+		
   ],
   "HTML_CSS_QUIZ": [
 		{

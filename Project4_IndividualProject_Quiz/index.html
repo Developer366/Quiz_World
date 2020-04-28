@@ -128,6 +128,27 @@
 			</div><br><br>
 	</script>	
 	<!-----------------------------------------------------End of True or False Template------------------------------------------------------------------>
+	
+	<!-----------------------------------------------------Fill-In the blank Template------------------------------------------------------------------>
+	<script id="FITB" type="text/x-handlebars-template">
+		
+		<h1>[Question {{questionId}}]:  {{question}}</h1>	
+		<p class="hidden" id="answer">{{answer}}</p>		
+		
+			<div id="answerChoices"> 				
+							
+				<form id="QuestionOptions" onsubmit="return false">	
+					<label for="FillIn">Your Fill-In answer: </label>
+					<input type="text" name="FillIn" id="FillIn}"><br>	
+					
+					<input type="radio" name="choice" id="option2" value="{{ options.[1] }}">
+					
+					<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
+				</form>	
+				
+			</div><br><br>
+	</script>	
+	<!-----------------------------------------------------End of Fill-in the blank Template------------------------------------------------------------------>
 
 
 
