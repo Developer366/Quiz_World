@@ -64,9 +64,34 @@
 			"answer": "[1,1,3,2]",
 			"explanation": "The add() method in Java LinkedHashSet is used to add a specific element into a LinkedHashSet. This method will add the element only if the specified element is not present in the LinkedHashSet else the function will return False if the element is already present in the LinkedHashSet.",
 			"message":"Nice Thinking!"
+		},
+		{
+			"questionId": 8,
+			"questiontype": "TF",
+			"question": "In an instance method or a constructor, THIS is a reference to the current object.",
+			"options": ["True", "False"],
+			"answer": "True",
+			"explanation": "Keyword THIS in Java is a reference variable that refers to the current object. THIS is a reference to the current object, whose method is being called upon. You can use THIS keyword to avoid naming conflicts in the method/constructor of your instance/object.",
+			"message":"You are soo cool!"
+		},
+		{
+			"questionId": 9,
+			"questiontype": "TF",
+			"question": "Garbage Collection is manual process.",
+			"options": ["True", "False"],
+			"answer": "False",
+			"explanation": "The Java runtime environment has a garbage collector that periodically frees the memory used by objects that are no longer referenced. The garbage collector does its job automatically when it determines that the time is right.",
+			"message":"Nice Job!"
+		},
+		{
+			"questionId": 10,
+			"questiontype": "TF",
+			"question": "Constructor overloading is not possible in Java.",
+			"options": ["True", "False"],
+			"answer": "False",
+			"explanation": "Constructor overloading is possible in Java. The Java compiler differentiates the constructors based on the number and the type of the arguments.",
+			"message":"Nice Job!"
 		}
-		
-		
   ],
   "HTML_CSS_QUIZ": [
 		{

@@ -2,6 +2,7 @@
 <html>
 <head> 
 <title>QUIZ WORLD</title>
+
 	<!-- HTML and CSS references-->
 	<link rel = "stylesheet" type = "text/css" href = "style.css" />
 	
@@ -11,16 +12,9 @@
 	<script src="my_javascript.js"></script>
 	
 	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-	
-	
-	<!--<script src="dist/easytimer.min.js"></script> 
-
-	<script>var timerInstance = new easytimer.Timer();</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	-->
 
 </head>
-<!---------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------->
 <body>
 	
 	<div class="container">
@@ -29,14 +23,13 @@
 		</div>
 	</div>
 	
-<!-- Submit Form DIV---------------------------------------------------------------------------------------------------------------------------->
+<!--Start of Submit Form DIV-------------------------------------------------------------------------------------------------------------------------->
 	<div class="row">
 		<div class="container-fluid">
 			<p id="Header">Please enter your Name and select which Quiz you want to take:</p><br>
 			<p id="score"></p>
 			<p id="numAnswered"></p>
-			
-			
+					
 			<div id="startInput">
 			
 				<label for="fullname">Full Name Input:&emsp;</label> 
@@ -52,100 +45,122 @@
 			</div> 
 		</div>
 	</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------->
+<!--End of Submit Form---------------------------------------------------------------------------------------------------------------------------->
 
-<!-- Divs where the quiz content will be loaded asynchronously usin------------------------------------------------------------------------------>
 	
-<!-- This div will be populated with what we getting from the backend-->
-	<div id="app_widget" class="container-fluid"></div> 
+<!--This div will be populated with what we getting from the backend----------------------->
+<div id="app_widget" class="container-fluid"></div> 
+<!--End of rendering div------------------------------------------------------------------->
 		
-			<!--Handlebar code starts here template for a multiple choice question	<h1>[Question {{this.0.questionId}}]:  {{this.0.question}}</h1>	-->
-			<script id="multipleChoice" type="text/x-handlebars-template">
-				
-				<h1>[Question {{questionId}}]:  {{question}}</h1>	
-				<div></div>			
-				
-					<div id="answerChoices"> 				
-									
-						<form id="QuestionOptions" onsubmit="return false">						
-							<input type="radio" name="choice" id="option1" value="{{ options.[0] }}" checked>   <label for="option1">a) {{ options.[0] }}</label><br>	
-							<input type="radio" name="choice" id="option2" value="{{ options.[1] }}">   		<label for="option2">b) {{ options.[1] }}</label><br>
-							<input type="radio" name="choice" id="option3" value="{{ options.[2] }}">   		<label for="option3">c) {{ options.[2] }}</label><br>				
-							<input type="radio" name="choice" id="option4" value="{{ options.[3] }}">   		<label for="option4">d) {{ options.[3] }}</label><br>											
-							<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
-						</form>						
-					</div><br><br>
-				<!--Template for IMC Multiple Choice with an image question-->
-					
+	<!---------------------------------------------Render View for a MC Question Multiple Choice Questions--------------------------------------------------->
+	<script id="multipleChoice" type="text/x-handlebars-template">
 		
-					
-				
-	<!-- If the question is wrong explain the correct answer and have a button to go to the next question-->
-					<div id="feedBackView">	
-					
-						<div id="wrongAnswer">
-							<p> The Answer is: <p id="answer">{{answer}}</p></p> 
-							<p> Explanation: {{explanation}}</p>
-							<button id="OK">Ok got it!!</button>
-						</div>
+		<h1>[Question {{questionId}}]:  {{question}}</h1>						
+		<p class="hidden" id="answer">{{answer}}</p>
+		<div id="answerChoices"> 				
 						
-	<!--If the question is correct, show an encouraging message that lasts for a second, then goes to the next question automatically-->
-						<div id="correctAnswer">
-							<p>You are Correct!</p>
-							<p>Encouraging Message: {{message}}</p>
-						</div>					
-					</div>
-				
-			</script>
+			<form id="QuestionOptions" onsubmit="return false">						
+				<input type="radio" name="choice" id="option1" value="{{ options.[0] }}">   <label for="option1">a) {{ options.[0] }}</label><br>	
+				<input type="radio" name="choice" id="option2" value="{{ options.[1] }}">   <label for="option2">b) {{ options.[1] }}</label><br>
+				<input type="radio" name="choice" id="option3" value="{{ options.[2] }}">   <label for="option3">c) {{ options.[2] }}</label><br>
+				<input type="radio" name="choice" id="option4" value="{{ options.[3] }}">   <label for="option4">d) {{ options.[3] }}</label><br>											
+				<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
+			</form>						
+		</div><br><br>				
+	</script>
+	<!-------------------------------------------------End of MC template - Multiple Choice---------------------------------------------------------------->	
 		
-
-		<!--
-		Feedback view that is going to have the explanation if wrong or a encouraging message if correct. then a ok button that increments to the next question
-		<div id="feedblackView" class="container-fluid"></div>
 		
-			<script id="feedbackView" type="text/x-handlebars-template">
-				<div>
-				
-				</div>
-			
-				<button onclick="submitStart()">Ok Next Question</button>
-			</script>
-		-->
-			
-			
+	<!-------------------------------------------------IMC - Image Multiple Choice Template---------------------------------------------------------------->
+	<script id="ImageMultipleChoice" type="text/x-handlebars-template">
+		
+		<h1>[Question {{questionId}}]:  {{question}}</h1>	
+		<p class="hidden" id="answer">{{answer}}</p>		
+		<img src="{{questionImage}}"></img>
+		
+			<div id="answerChoices"> 				
+							
+				<form id="QuestionOptions" onsubmit="return false">						
+					<input type="radio" name="choice" id="option1" value="{{ options.[0] }}">   <label for="option1">a) {{ options.[0] }}</label><br>	
+					<input type="radio" name="choice" id="option2" value="{{ options.[1] }}">   <label for="option2">b) {{ options.[1] }}</label><br>
+					<input type="radio" name="choice" id="option3" value="{{ options.[2] }}">   <label for="option3">c) {{ options.[2] }}</label><br>				
+					<input type="radio" name="choice" id="option4" value="{{ options.[3] }}">   <label for="option4">d) {{ options.[3] }}</label><br>											
+					<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
+				</form>						
+			</div><br><br>
+	</script>	
+	<!----------------------------------------------------End of Image Multiple Choice-------------------------------------------------------------------->	
+	
+	<!--------------------------------------------------IMC - Image Multiple Choice Template-------------------------------------------------------------->
+	<script id="ImageMultipleChoice" type="text/x-handlebars-template">
+		
+		<h1>[Question {{questionId}}]:  {{question}}</h1>	
+		<p class="hidden" id="answer">{{answer}}</p>		
+		<img src="{{questionImage}}"></img>
+		
+			<div id="answerChoices"> 				
+							
+				<form id="QuestionOptions" onsubmit="return false">						
+					<input type="radio" name="choice" id="option1" value="{{ options.[0] }}">   <label for="option1">a) {{ options.[0] }}</label><br>	
+					<input type="radio" name="choice" id="option2" value="{{ options.[1] }}">   <label for="option2">b) {{ options.[1] }}</label><br>
+					<input type="radio" name="choice" id="option3" value="{{ options.[2] }}">   <label for="option3">c) {{ options.[2] }}</label><br>				
+					<input type="radio" name="choice" id="option4" value="{{ options.[3] }}">   <label for="option4">d) {{ options.[3] }}</label><br>											
+					<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
+				</form>						
+			</div><br><br>
+	</script>	
+	<!-----------------------------------------------------End of Image Multiple Choice------------------------------------------------------------------>
 
+	<!-----------------------------------------------------TF - True and False Template------------------------------------------------------------------>
+	<script id="TrueFalse" type="text/x-handlebars-template">
+		
+		<h1>[Question {{questionId}}]:  {{question}}</h1>	
+		<p class="hidden" id="answer">{{answer}}</p>		
+		
+			<div id="answerChoices"> 				
+							
+				<form id="QuestionOptions" onsubmit="return false">						
+					<input type="radio" name="choice" id="option1" value="{{ options.[0] }}">   <label for="option1">a) {{ options.[0] }}</label><br>	
+					<input type="radio" name="choice" id="option2" value="{{ options.[1] }}">   <label for="option2">b) {{ options.[1] }}</label><br>
+																
+					<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
+				</form>						
+			</div><br><br>
+	</script>	
+	<!-----------------------------------------------------End of True or False Template------------------------------------------------------------------>
+
+
+
+
+
+
+<!--Div displaying feedback view after submitting answer---------------------------->
+<div id="app_widget_FeedBackView" class="container-fluid"></div> 
+<!--End of rendering feedback div--------------------------------------------------->
+
+				
+	<!--Start of Feedback View for Correct and Wrong Answer-------------------------------------------------------------------------------------->
+	<script id="feedbackView" type="text/x-handlebars-template">	
+		<div id="feedBackView">
+		
+			<div id="wrongAnswer">
+				<p> The Answer is: <p id="answer2">{{answer}}</p></p> 
+				<p> Explanation: {{explanation}}</p>
+				<button id="OK">Ok got it!!</button>
+			</div>
+				
+
+			<div id="correctAnswer">
+				<p>You are Correct!</p>
+				<p>Encouraging Message: {{message}}</p>
+			</div>
+			
+		</div>
+			
+	</script>
+	<!--End of Feedback View--------------------------------------------------------------------------------------------------------------------->
+	
+
+	
 </body>
 </html>
-
-
-
-
-
- <!-- Code that was cut and saved for references
-	<label for="lname">Last name:</label><br>
-	<input type="text" id="lname" name="lname" value="Doe"><br><br>
-		  
-		  {{this.JavaQuizQuestions.question}}
-
-
-					<ul>
-					{{#each JavaQuizQuestions}}
-						<li>{{this.question}}</li>
-						<li>{{this.message}}</li>
-					{{/each}}
-					</ul>	
-
-
-
-	
-	<div class="col-6 mx-auto">
-		
-		<div id="feedback"> </div>   This div will show feedback from the users answer whether they are right or wrong
-		
-	</div>
-	
-
-
-
--->
-
