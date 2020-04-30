@@ -7,6 +7,8 @@ var NumAnswered = 0;
 var NumCorrect = 0; 
 var j = 0;
 
+var totalSeconds = 0;
+
 //----------------------------------------------------Starts the Quiz after Submitting Name and Quiz Choice--------------------------------------------------------
 function submitStart() {
 	var name = document.getElementById("fullname").value;
@@ -20,21 +22,54 @@ function submitStart() {
 		//document.getElementById("startInput").submit();
 		document.getElementById("startInput").style.display = "none";
 		document.getElementById("Header").innerHTML = "[NAME]: " + name + "&nbsp;&nbsp;<br>&nbsp;[QUIZ SELECTED]: " + quizChoice;
+		document.getElementById("Timer").style.display = "block";
+		//document.getElementById("minutes").style.display = "block";
 		//create_user_view(1)
 		if(quizChoice == "Java Quiz"){
 			quizSelection ="Java Quiz";
-			var i = 0;
+			var i = 10;			
 			create_user_view_Q1(i)
+			setInterval(setTime, 1000);												
 		}
 		else if(quizChoice== "HTML/CSS Quiz"){
 			quizSelection ="HTML/CSS Quiz";
 			var j = 0;
 			create_user_view_Q2(j)
+			setInterval(setTime, 1000);
 		}
 
 		return false;
 	}
 }
+//-----------------------------------functions for timer-----------------------------------------
+function setTime() {
+  ++totalSeconds;
+  document.getElementById("seconds").innerHTML = displayTime(totalSeconds % 60); //gets seconds and resets after 60 seconds
+  //secondsLabel.innerHTML = pad(totalSeconds % 60);
+  document.getElementById("minutes").innerHTML = displayTime(parseInt(totalSeconds / 60)); //gets minute when 60 diveds into 60 seconds
+  //minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+function displayTime(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } 
+  else {
+    return valString;
+  }
+}
+
+
+
+/*function setTime(){
+	
+	function IncrementTime(){
+		seconds++;
+	}
+	setInterval(IncrementTime, 1000);
+}
+*/
+
 
 //-----------------------check answer if right good job next question. iF WRONG EXPLAIN AND THEN CLICK OK and move on--------------------------------------------
 function checkAnswer() {
@@ -57,7 +92,7 @@ function checkAnswer() {
 					document.getElementById("score").innerHTML = "Correct Answers: " + score;
 					NumAnswered++;
 					document.getElementById("numAnswered").innerHTML = "Questions attempted: " + NumAnswered;				
-					setTimeout(nextQuestion,3000);	
+					setTimeout(nextQuestion,1000);	
 				}
 				else {
 					document.getElementById("SubmitAnswer").style.display = "none";
@@ -75,8 +110,9 @@ function checkAnswer() {
 function checkAnswerFITB(){
 	var answer = document.getElementById("answer").innerHTML; 
 	var input = document.getElementById("FillIn").value;
+	var FixedInput = input.toLowerCase();
 	
-	if(anser=input){
+	if(answer==FixedInput){
 		document.getElementById("SubmitAnswer").style.display = "none";
 		document.getElementById("feedBackView").style.display = "block";
 		document.getElementById("correctAnswer").style.display = "block";
@@ -84,7 +120,7 @@ function checkAnswerFITB(){
 		document.getElementById("score").innerHTML = "Correct Answers: " + score;
 		NumAnswered++;
 		document.getElementById("numAnswered").innerHTML = "Questions attempted: " + NumAnswered;				
-		setTimeout(nextQuestion,3000);
+		setTimeout(nextQuestion,1000);
 	}
 	else{
 		document.getElementById("SubmitAnswer").style.display = "none";
@@ -117,21 +153,28 @@ document.addEventListener('DOMContentLoaded', () => {
 	//create_user_view(1)	
 });
 
+function ShowScore(){
+	var finalScore = score/NumAnswered;
+	document.getElementById("app_widget").innerHTML = "Your Final Score is: "  + finalScore;
+	//document.getElementById("score").innerHTML = "Correct Answers: " + score;
+	
+}
 
 
-//----------------------------------------------------------------HTML CSS QUIZ-----------------------------------------------------------------------------
+
+//----------------------------------------------------------------Java QUIZ-----------------------------------------------------------------------------
 const create_user_view_Q1 = async (index) => {
 	//const data = await fetch("https://my-json-server.typicode.com/Developer366/CUS1172_Spring2020_Kamil_Peza")
 	var i=1;
 	const data = await fetch('https://my-json-server.typicode.com/Developer366/CUS1172_Spring2020_Kamil_Peza/db')
 	const model = await data.json()//model stores the databse
-	console.log(model.Java_Quiz[index].questiontype=="MC")
+	
 //const html_element = render_widget(model.Java_Quiz[0],'#multipleChoice')//renders the view with handlebars
 //document.querySelector("#app_widget").innerHTML = html_element; //selects where to render the template
 	console.log(model.Java_Quiz[index].questiontype)
 	console.log(model.Java_Quiz[index].questiontype=="MC")
 
-//Multiple Choice Question	
+//1 Multiple Choice Question	
 	if (model.Java_Quiz[index].questiontype=="MC"){
 		//Render The Question View and Feedback
 		const html_element = render_widget(model.Java_Quiz[index],'#multipleChoice')//renders the MC view with handlebars
@@ -140,7 +183,7 @@ const create_user_view_Q1 = async (index) => {
 		document.querySelector("#app_widget").innerHTML = html_element;
 		document.querySelector("#app_widget_FeedBackView").innerHTML = html_element_feedback;
 	}
-//Image Multiple Choice
+//2 Image Multiple Choice
 	else if(model.Java_Quiz[index].questiontype=="IMC"){
 		//Render The Question View and Feedback
 		const html_element = render_widget(model.Java_Quiz[index],'#ImageMultipleChoice')//renders the view with handlebars
@@ -149,7 +192,7 @@ const create_user_view_Q1 = async (index) => {
 		document.querySelector("#app_widget").innerHTML = html_element;		
 		document.querySelector("#app_widget_FeedBackView").innerHTML = html_element_feedback;		
 	}
-//True or False Choice Question
+//3 True or False Choice Question
 	else if(model.Java_Quiz[index].questiontype=="TF"){
 		//Render The Question View and Feedback
 		const html_element = render_widget(model.Java_Quiz[index],'#TrueFalse')//renders the view with handlebars
@@ -158,7 +201,7 @@ const create_user_view_Q1 = async (index) => {
 		document.querySelector("#app_widget").innerHTML = html_element;		
 		document.querySelector("#app_widget_FeedBackView").innerHTML = html_element_feedback;			
 	}
-//Fill in the Blank FITB Question
+//4 Fill in the Blank FITB Question
 	else if(model.Java_Quiz[index].questiontype=="FITB"){
 		//Render The Question View and Feedback
 		const html_element = render_widget(model.Java_Quiz[index],'#FITB')//renders the view with handlebars
@@ -167,11 +210,24 @@ const create_user_view_Q1 = async (index) => {
 		document.querySelector("#app_widget").innerHTML = html_element;		
 		document.querySelector("#app_widget_FeedBackView").innerHTML = html_element_feedback;
 	}	
+//5 Short Answer Question
+	else if(model.Java_Quiz[index].questiontype=="SA"){
+		//Render The Question View and Feedback
+		const html_element = render_widget(model.Java_Quiz[index],'#FITB')//renders the view with handlebars
+		const html_element_feedback = render_widget(model.Java_Quiz[index],'#feedbackView')	
+		//Render the Views
+		document.querySelector("#app_widget").innerHTML = html_element;		
+		document.querySelector("#app_widget_FeedBackView").innerHTML = html_element_feedback;
+	}
+	else{
+		ShowScore()
+	}
 	
 }
 //Java Question References:
 //https://www.placementquestion.com/category/java_question/true_false_choice/
 //http://bssve.in/QuestionBank/JAVA.asp
+//https://www.placementquestion.com/category/java_question/true_false_choice/2
 
 //--------------------------------------------------------HTML CSS QUIZ-------------------------------------------------------------------------------------
 const create_user_view_Q2 = async (index) => {

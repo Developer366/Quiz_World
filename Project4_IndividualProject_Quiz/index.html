@@ -26,15 +26,18 @@
 <!--Start of Submit Form DIV-------------------------------------------------------------------------------------------------------------------------->
 	<div class="row">
 		<div class="container-fluid">
-			<p id="Header">Please enter your Name and select which Quiz you want to take:</p><br>
+			<p id="Header">Please enter your Name and select which Quiz you want to take:</p>
+			<p id="Timer" class="hidden">---------- Elapsed Time: <label id="minutes">00</label><label>:</label><label id="seconds">00</label> ----------</p>
 			<p id="score"></p>
-			<p id="numAnswered"></p>
+			<p id="numAnswered"></p>		
+			
+			
 					
 			<div id="startInput">
 			
 				<label for="fullname">Full Name Input:&emsp;</label> 
 				<input type="text" id="fullname" name="fullname" placeholder="name"><br><br>
-		  
+
 				<label for="QUIZsss">Choose a quiz you want to take:&emsp;</label>
 				<select id="QuizChoice" name="QUIZ">		
 					<option value="Java Quiz">Java Quiz</option>
@@ -52,7 +55,7 @@
 <div id="app_widget" class="container-fluid"></div> 
 <!--End of rendering div------------------------------------------------------------------->
 		
-	<!---------------------------------------------Render View for a MC Question Multiple Choice Questions--------------------------------------------------->
+	<!--(1)-------------------------------------------Render View for a MC Question Multiple Choice Questions--------------------------------------------------->
 	<script id="multipleChoice" type="text/x-handlebars-template">
 		
 		<h1>[Question {{questionId}}]:  {{question}}</h1>						
@@ -68,10 +71,10 @@
 			</form>						
 		</div><br><br>				
 	</script>
-	<!-------------------------------------------------End of MC template - Multiple Choice---------------------------------------------------------------->	
+	<!--(/1)-----------------------------------------------End of MC template - Multiple Choice---------------------------------------------------------------->	
 		
 		
-	<!-------------------------------------------------IMC - Image Multiple Choice Template---------------------------------------------------------------->
+	<!--(2)-----------------------------------------------IMC - Image Multiple Choice Template---------------------------------------------------------------->
 	<script id="ImageMultipleChoice" type="text/x-handlebars-template">
 		
 		<h1>[Question {{questionId}}]:  {{question}}</h1>	
@@ -89,29 +92,9 @@
 				</form>						
 			</div><br><br>
 	</script>	
-	<!----------------------------------------------------End of Image Multiple Choice-------------------------------------------------------------------->	
-	
-	<!--------------------------------------------------IMC - Image Multiple Choice Template-------------------------------------------------------------->
-	<script id="ImageMultipleChoice" type="text/x-handlebars-template">
-		
-		<h1>[Question {{questionId}}]:  {{question}}</h1>	
-		<p class="hidden" id="answer">{{answer}}</p>		
-		<img src="{{questionImage}}"></img>
-		
-			<div id="answerChoices"> 				
-							
-				<form id="QuestionOptions" onsubmit="return false">						
-					<input type="radio" name="choice" id="option1" value="{{ options.[0] }}">   <label for="option1">a) {{ options.[0] }}</label><br>	
-					<input type="radio" name="choice" id="option2" value="{{ options.[1] }}">   <label for="option2">b) {{ options.[1] }}</label><br>
-					<input type="radio" name="choice" id="option3" value="{{ options.[2] }}">   <label for="option3">c) {{ options.[2] }}</label><br>				
-					<input type="radio" name="choice" id="option4" value="{{ options.[3] }}">   <label for="option4">d) {{ options.[3] }}</label><br>											
-					<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
-				</form>						
-			</div><br><br>
-	</script>	
-	<!-----------------------------------------------------End of Image Multiple Choice------------------------------------------------------------------>
+	<!--(/2)--------------------------------------------------End of Image Multiple Choice-------------------------------------------------------------------->	
 
-	<!-----------------------------------------------------TF - True and False Template------------------------------------------------------------------>
+	<!--(3)---------------------------------------------------TF - True and False Template------------------------------------------------------------------>
 	<script id="TrueFalse" type="text/x-handlebars-template">
 		
 		<h1>[Question {{questionId}}]:  {{question}}</h1>	
@@ -127,32 +110,45 @@
 				</form>						
 			</div><br><br>
 	</script>	
-	<!-----------------------------------------------------End of True or False Template------------------------------------------------------------------>
+	<!--(/3)---------------------------------------------------End of True or False Template------------------------------------------------------------------>
 	
-	<!-----------------------------------------------------Fill-In the blank Template------------------------------------------------------------------>
+	<!--(4)---------------------------------------------------Fill-In the blank Template---------------------------------------------------------------------->
 	<script id="FITB" type="text/x-handlebars-template">
 		
-		<h1>[Question {{questionId}}]:  {{question}}</h1>	
+		<h1>[Question {{questionId}}]:  {{question}}</h1><br>	
 		<p class="hidden" id="answer">{{answer}}</p>		
 		
 			<div id="answerChoices"> 				
 							
 				<form id="QuestionOptions" onsubmit="return false">	
-					<label for="FillIn">Your Fill-In answer: </label>
-					<input type="text" name="FillIn" id="FillIn}"><br>	
+					<label for="FillIn">Fill in the blank:  </label>
+					<input type="text" name="FillIn" id="FillIn"><br>					
 					
-					<input type="radio" name="choice" id="option2" value="{{ options.[1] }}">
+					<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswerFITB()">
+				</form>	
+				
+			</div><br><br>
+	</script>	
+	<!--(/4)---------------------------------------------------End of Fill-in the blank Template----------------------------------------------------------->
+
+	<!--(5)---------------------------------------------------Short-Answer Template------------------------------------------------------------------------>
+	<script id="SA" type="text/x-handlebars-template">
+		
+		<h1>[Question {{questionId}}]:  {{question}}</h1><br>	
+		<p class="hidden" id="answer">{{answer}}</p>		
+		
+			<div id="answerChoices"> 				
+							
+				<form id="QuestionOptions" onsubmit="return false">	
+					<label for="FillIn">Enter your answer:  </label>
+					<input type="text" name="FillIn" id="FillIn"><br>					
 					
 					<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
 				</form>	
 				
 			</div><br><br>
 	</script>	
-	<!-----------------------------------------------------End of Fill-in the blank Template------------------------------------------------------------------>
-
-
-
-
+	<!--(/5)-----------------------------------------------------Short-Answer Template------------------------------------------------------------------>
 
 
 <!--Div displaying feedback view after submitting answer---------------------------->
