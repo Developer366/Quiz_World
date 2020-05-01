@@ -71,7 +71,7 @@
 			"question": "In an instance method or a constructor, THIS is a reference to the current object.",
 			"options": ["True", "False"],
 			"answer": "True",
-			"explanation": "Keyword THIS in Java is a reference variable that refers to the current object. THIS is a reference to the current object, whose method is being called upon. You can use THIS keyword to avoid naming conflicts in the method/constructor of your instance/object.",
+			"explanation": "Keyword THIS in Java is a reference variable that refers to the current object. THIS is a reference to the current object, whose method is being called upon.",
 			"message":"You are soo cool!"
 		},
 		{
@@ -98,7 +98,7 @@
 			"question": "Java Technology is both a programming language and a platform.",
 			"options": ["True", "False"],
 			"answer": "True",
-			"explanation": "A platform is the hardware or software environment in which a program runs. We've already mentioned some of the most popular platforms like Windows 2000, Linux, Solaris, and MacOS. Most platforms can be described as a combination of the operating system and hardware. The Java platform differs from most other platforms in that it's a software-only platform that runs on top of other hardware-based platforms.",
+			"explanation": "A platform is the hardware or software environment in which a program runs. Most platforms can be described as a combination of the operating system and hardware. The Java platform differs from most other platforms in that it's a software-only platform that runs on top of other hardware-based platforms.",
 			"message":"You are Smart!"
 		},
 		{
@@ -106,7 +106,7 @@
 			"questiontype": "FITB",
 			"question": "The ________ statement is used to include another Java package in a Java source file.",
 			"answer": "import",
-			"explanation": "In Java, the import statement is used to bring certain classes or the entire packages, into visibility. As soon as imported, a class can be referred to directly by using only its name. The import statement is a convenience to the programmer and is not technically needed to write complete Java program.",
+			"explanation": "In Java, the import statement is used to bring certain classes or the entire packages, into visibility. As soon as imported, a class can be referred to directly by using only its name.",
 			"message":"Great!"
 		},
 		{
@@ -114,7 +114,7 @@
 			"questiontype": "FITB",
 			"question": "__________ is the process by which objects of one class acquire the properties of another class.",
 			"answer": "inheritence",
-			"explanation": "Inheritance in Java is a mechanism in which one object acquires all the properties and behaviors of a parent object. ... The idea behind inheritance in Java is that you can create new classes that are built upon existing classes. When you inherit from an existing class, you can reuse methods and fields of the parent class.",
+			"explanation": "Inheritance in Java is a mechanism in which one object acquires all the properties and behaviors of a parent object. The idea behind inheritance in Java is that you can create new classes that are built upon existing classes. When you inherit from an existing class, you can reuse methods and fields of the parent class.",
 			"message":"Smart one are ya!"
 		},
 		{
