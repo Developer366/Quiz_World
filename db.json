@@ -59,7 +59,7 @@
 			"questionId": 7,
 			"questiontype": "IMC",
 			"question": "What will the output of the following program be?",
-			"questionImage": "Project4_IndividualProject_Quiz/JavaTest_images/QuestionID_7",
+			"questionImage": "Project4_IndividualProject_Quiz/JavaTest_images/QuestionID_7.PNG",
 			"options": ["15 times ***", "15 times +++++", "8 times *** and 7 times +++++", "Both will print only once"],
 			"answer": "8 times *** and 7 times +++++",
 			"explanation": "For all odd numbers till 15 (1, 3, 5, 7, 9, 11, 13, 15), it will print (***), and for all even numbers till 14 (2, 4, 6, 8, 10, 12, 14) it will print (+++++). Hence, an asterisk (***) will be printed eight times, and plus (+++++) will be printed seven times.",
@@ -145,7 +145,7 @@
 			"questionId": 17,
 			"questiontype": "IMC",
 			"question": "Given the following values of a and the method doubleLast what will the values of a be after you execute: doubleLast()?",
-			"questionImage": "Project4_IndividualProject_Quiz/JavaTest_images/QuestionID_7",
+			"questionImage": "Project4_IndividualProject_Quiz/JavaTest_images/QuestionID_7.PNG",
 			"options": ["{-20,-10,2,8,16,60}", "{-20,-10,2,4,8,30}", "{-10, -5, 1, 8, 16, 60}", "{-10, -5, 1, 4, 8, 30  }"],
 			"answer": "{-10, -5, 1, 8, 16, 60}",
 			"explanation": "It loops from the middle to the end doubling each value. Since there are 6 elements it will start at index 3.",
@@ -172,10 +172,10 @@
 		{
 			"questionId": 20,
 			"questiontype": "SA",
-			"question": "What variable stores values with two states: true or false?",
-			"answer": "boolean",
-			"explanation": "Boolean stores values with two states: true or false.",
-			"message":"Awesome!"
+			"question": "What does calling a constructor create?",
+			"answer": "object",
+			"explanation": "A constructor is a special type of subroutine called to create an object.",
+			"message":"Good!"
 		}	
   ]
 	
