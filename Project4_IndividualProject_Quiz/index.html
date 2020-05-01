@@ -27,11 +27,10 @@
 	<div class="row">
 		<div class="container-fluid">
 			<p id="Header">Please enter your Name and select which Quiz you want to take:</p>
-			<p id="Timer" class="hidden">---------- Elapsed Time: <label id="minutes">00</label><label>:</label><label id="seconds">00</label> ----------</p>
+			<p id="Timer" class="hidden">--------------- Elapsed Time: <label id="minutes">00</label><label>:</label><label id="seconds">00</label> ---------------</p>
 			<p id="score"></p>
 			<p id="numAnswered"></p>		
-			
-			
+					
 					
 			<div id="startInput">
 			
@@ -143,7 +142,7 @@
 					<label for="FillIn">Enter your answer:  </label>
 					<input type="text" name="FillIn" id="FillIn"><br>					
 					
-					<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswer()">
+					<input type="submit" value="Submit Answer" id="SubmitAnswer" onclick="checkAnswerFITB()">
 				</form>	
 				
 			</div><br><br>
@@ -155,7 +154,8 @@
 <div id="app_widget_FeedBackView" class="container-fluid"></div> 
 <!--End of rendering feedback div--------------------------------------------------->
 
-				
+
+			
 	<!--Start of Feedback View for Correct and Wrong Answer-------------------------------------------------------------------------------------->
 	<script id="feedbackView" type="text/x-handlebars-template">	
 		<div id="feedBackView">
@@ -177,6 +177,15 @@
 	</script>
 	<!--End of Feedback View--------------------------------------------------------------------------------------------------------------------->
 	
+<!--Div that displays the final score and options to retake quiz or go back to main menu--------------->
+	<div id="FinalView" class="container-fluid" >
+		<p id="FinalScore"><p>
+		<p id="PassOrFail"></p>
+		<button id="Retake" onclick="submitStart()">Retake quiz</button>
+		<button id="MainMenu" onclick="location.reload()">Main Menu</button>	
+	</div> 
+<!--End of Final View Div------------------------------------------------------------------------------>
+
 
 	
 </body>

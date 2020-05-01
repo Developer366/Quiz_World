@@ -59,6 +59,13 @@ img {
 	/*visibility: hidden;*/
 	display:none;
 }
+#FinalView{
+	display:none;
+	background-color: Gold;
+	border:1px solid black;
+	padding: 50px;
+	color: green !important;
+}
 .jumbotron {
 	background-color: DarkOrange !important;
 	

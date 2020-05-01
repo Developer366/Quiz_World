@@ -145,7 +145,7 @@
 			"questionId": 17,
 			"questiontype": "IMC",
 			"question": "Given the following values of a and the method doubleLast what will the values of a be after you execute: doubleLast()?",
-			"questionImage": "JavaTest_images/QuestionID_7.PNG",
+			"questionImage": "JavaTest_images/QuestionID_17.PNG",
 			"options": ["{-20,-10,2,8,16,60}", "{-20,-10,2,4,8,30}", "{-10, -5, 1, 8, 16, 60}", "{-10, -5, 1, 4, 8, 30  }"],
 			"answer": "{-10, -5, 1, 8, 16, 60}",
 			"explanation": "It loops from the middle to the end doubling each value. Since there are 6 elements it will start at index 3.",
@@ -154,11 +154,11 @@
 		{
 			"questionId": 18,
 			"questiontype": "IMC",
-			"question": "Given the following values of a and the method doubleLast what will the values of a be after you execute: doubleLast()?",
+			"question": "Given the following code, what letter will be printed if the score is 76?",
 			"questionImage": "JavaTest_images/QuestionID_18.PNG",
-			"options": ["{-20,-10,2,8,16,60}", "{-20,-10,2,4,8,30}", "{-10, -5, 1, 8, 16, 60}", "{-10, -5, 1, 4, 8, 30  }"],
-			"answer": "{-10, -5, 1, 8, 16, 60}",
-			"explanation": "It loops from the middle to the end doubling each value. Since there are 6 elements it will start at index 3.",
+			"options": ["A", "B", "C", "D"],
+			"answer": "C",
+			"explanation": "76 is greater than or equal to 70 and below 80.",
 			"message":"Nice Job!"
 		},
 		{
