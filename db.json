@@ -177,52 +177,6 @@
 			"explanation": "Boolean stores values with two states: true or false.",
 			"message":"Awesome!"
 		}	
-  ],
-  "HTML_CSS_QUIZ": [
-		{
-			"questionId": 1,
-			"questiontype": "MC",
-			"question": "What does HTML stand for?",
-			"options": [ "Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language", "Hyper Text Model Layout" ],
-			"answer": "Hyper Text Markup Language",
-			"explanation": "HTML stands for Hyper Text Markup Language",
-			"message": "Correct!"
-		},
-		{
-			"questionId": 2,
-			"questiontype": "MC",
-			"question": "Choose the correct HTML tag for the largest heading.",
-			"options": ["H1", "Heading", "Head", "H6"],
-			"answer": "H1",
-			"explanation": "H1 is the tag for the largest heading, while H6 is the smallest heading.",
-			"message":"Good Answer!"
-		},
-		{
-			"questionId": 3,
-			"questiontype": "MC",
-			"question": "Which of the following property is used to create a small-caps effect?",
-			"options": ["font-family", "font-style", "font-variant", "Cascade Style Systems"],
-			"answer": "font-weight",
-			"explanation": "The font-variant property is used to create a small-caps effect.",
-			"message":"Awesome!"
-		},
-		{
-			"questionId": 4,
-			"questiontype": "MC",
-			"question": "CSS stands for?",
-			"options": ["Case Sensitive Style", "Computers Style Sheets", "Cascade Style Sheets", "font-weight"],
-			"answer": "Cascade Style Sheets",
-			"explanation": "CSS stands for Cascading Style Sheets.",
-			"message":"High-Five!"
-		},
-		{
-			"questionId": 5,
-			"questiontype": "MC",
-			"question": "Which is the coreect CSS Syntax?",
-			"options": ["Body:color=black", "{body;color:black}", "{body:color=black(body}}", "Body{color: Black}"],
-			"answer": "Body{color: Black}",
-			"explanation": "Element is followed by curly brackets. Inside curly brackets you select what you want to style followed by : and how you want to style. End with semi-colon.",
-			"message":"Epic!"
-		}
-	]	
+  ]
+	
 }	

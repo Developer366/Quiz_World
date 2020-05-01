@@ -233,7 +233,7 @@ const create_user_view_Q1 = async (index) => {
 const create_user_view_Q2 = async (index) => {
 	//const data = await fetch("https://my-json-server.typicode.com/Developer366/CUS1172_Spring2020_Kamil_Peza")
 	var i=1;
-	const data = await fetch('https://my-json-server.typicode.com/Developer366/CUS1172_Spring2020_Kamil_Peza/db')
+	const data = await fetch('https://my-json-server.typicode.com/Developer366/project_milestone1_jsonDatabase2/db')
 	const model = await data.json()//model stores the databse
 	const html_element = render_widget(model.HTML_CSS_QUIZ[index],'#multipleChoice')//renders the view with handlebars
 	//const html_element = render_widget(model.Java_Quiz[0],'#multipleChoice')//renders the view with handlebars
