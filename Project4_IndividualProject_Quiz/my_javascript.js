@@ -138,6 +138,7 @@ function checkAnswerFITB(){
 function nextQuestion(){
 	if(quizSelection=="Java Quiz"){
 		if(i<quizLength){ //quizLength used to determine to end the quiz
+		console.log(quizLength)
 		i++;
 		create_user_view_Q1(i)
 		}
@@ -147,7 +148,8 @@ function nextQuestion(){
 		}
 	}
 	else if(quizSelection=="HTML/CSS Quiz"){
-		if(i<quizLength){ //quizLength used to determine to end the quiz
+		if(j<quizLength){ //quizLength used to determine to end the quiz
+		console.log(quizLength)
 		j++;
 		create_user_view_Q2(j)
 		}
@@ -167,10 +169,12 @@ function ShowScore(){
 	if(finalScore<80){
 		document.getElementById("PassOrFail").innerHTML = "I am sorry but you failed. An 80 or higher is passing.";
 		i=0;
+		j=0;
 	}
 	else {
 		document.getElementById("PassOrFail").innerHTML = "You passed the Quiz. Congratulations!";
 		i=0;
+		j=0;
 	}
 }
 //----------------------------------------------------------------Java QUIZ-----------------------------------------------------------------------------
